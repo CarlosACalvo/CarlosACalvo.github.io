@@ -106,11 +106,73 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Forecast of Flight Prices</h2>
-        <p>In this project a complete process of data analysis is carried out, which logically includes good data cleaning, 
-                  a good exploratory analysis and finally the creation of 3 machine learning models that are implemented and compared for 
-                  to obtain a definitive model with which predictions are made using previously unknown data.</p>
+        <h2>🛫 Forecast of Flight Prices at India 🛬</h2>
+        <p>In this project a complete process of data analysis is carried out, covering logically from a good data cleaning, 
+                  to a good exploratory analysis, to finally create a machine learning model with which predictions can be made 
+                  of what a flight ticket will cost according to the characteristics of the flight.</p><br>
+        <p>The project actually implements three different models: RandomForest, XGBoost and CatBoost, and compares their performance 
+          in addition to making a slight optimization of hyperparameters.</p><br>
+        <p>The ultimate objective is to choose the model that has shown the best performance and implement a prediction with a small data set 
+          not known by the model, which are then validated to verify that they are reasonable according to the characteristics of 
+          input data, and are checked against similar historical data.</p>
       </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up">
+        <h2>🧩 Features</h2>  
+        <ul>
+          <li>Data cleaning</li>
+          <li>Exploratory Data Analysis (EDA)</li>
+          <li>Data Visualization</li>
+          <li>Feature Engineer</li>
+          <li>Machine Learning Models: RandomForest, XGBoost, CatBoost</li>
+          <li>Hyperparameter Optimization</li>
+          <li>Forecasting and Validation</li>
+        </ul>
+      </div><br>
+
+      <div class="container" data-aos="fade-up">
+        <h2>⁉️ Analized Variables</h2>  
+        <ul>
+          <li>Airline</li>
+          <li>Origin and destination</li>
+          <li>Date and hour of the flight</li>
+          <li>Class (Economy/Business)</li>
+          <li>Number of stops</li>
+          <li>Flight duration in minutes</li>
+        </ul>
+      </div><br>
+
+      <div class="container" data-aos="fade-up">
+        <h2>🤯 Employed Technologies</h2>  
+        <ul>
+          <li>Python 3.13</li>
+          <li>Pandas</li>
+          <li>NumPy</li>
+          <li>Scikit-learn</li>
+          <li>XGBoost</li>
+          <li>CatBoost</li>
+          <li>Matplotlib</li>
+          <li>Seaborn</li>
+        </ul>
+      </div><br>
+
+      <div class="container" data-aos="fade-up">
+        <h2>📚 Project's Structure</h2>  
+        <ol>
+          <li>Problem Definition</li>
+          <li>Libraries' Import and Data Load</li>
+          <li>Data Quality Report</li>
+          <li>Exploratory Data Analysis</li>
+          <li>Correlations Analysis</li>
+          <li>Needed Transformations</li>
+          <li>Choice and creation of models</li>
+          <li>Evaluation Metrics</li>
+          <li>Hyperparameter Grid Optimization</li>
+          <li>Example of Price Prediction</li>
+          <li>Final Conclusion</li>
+        </ol><br>
+        <h2>📊 Some Visualizations</h2>  
+      </div>
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
 
@@ -179,8 +241,105 @@
 
         </div>
 
-      </div>
+      </div><br>
 
+      <div class="container" data-aos="fade-up">
+        <h2>🏅 Model Comparison</h2>  
+        <table class="table table-striped">
+          <tr>
+            <th>Model</th>
+            <th>MSE</th>
+            <th>R²</th>
+            <th>MAE</th>
+          </tr> 	 	 	
+          <tr>
+            <td>Random Forest</td>
+            <td>1.30e+07</td>
+            <td>0.975</td>
+            <td>2,200.99</td>
+          </tr>
+          <tr> 	 	 	
+            <td>XGBoost</td>
+            <td>1.69e+07</td>
+            <td>0.967</td>
+            <td>2,733.70</td>
+          </tr>
+          <tr>
+            <td>CatBoost</td>
+            <td>9.86e+06</td>
+            <td>0.981</td>
+            <td>1,788.83</td>
+          </tr>
+        </table><br>
+        <p>The <strong>CatBoost</strong> model got the best performance, with:<br>
+          <ul>
+            <li>Least Mean Squared Error (MSE): 9.86e+06</li>
+            <li>Greater Determination Coefficient (R²): 0.981</li>
+            <li>Least Mean Absolut Error (MAE): 1,788.83</li>
+          </ul>
+        </p>
+      </div><br>
+
+      <div class="container" data-aos="fade-up">
+        <h2>🧙🏻‍♂️ Predictions Examples</h2>  
+        <table class="table table-striped">
+          <tr> 	 	 	
+            <th>Path</th>
+            <th>Airline</th>
+            <th>Class</th>
+            <th>Predicted Price</th>
+          </tr> 	 	 	
+          <tr> 	 	 	
+            <td>Delhi_Mumbai</td>
+            <td>Vistara</td>
+            <td>Business</td>
+            <td><strong>₹30,558.62</strong></td>
+          </tr>
+          <tr> 	 	 	 	 	 	
+            <td>Mumbai_Kolkata</td>
+            <td>Air India</td>
+            <td>Economy</td>
+            <td><strong>₹4,464.27</strong></td>
+          </tr>
+          <tr> 	 	 	
+            <td>Kolkata_Delhi</td>
+            <td>SpiceJet</td>
+            <td>Economy</td>
+            <td><strong>₹5,988.87</strong></td>
+          </tr>
+        </table>
+      </div><br>
+
+      <div class="container" data-aos="fade-up">
+        <h2>💵 Analysis of the reasonableness of predicted prices</h2><br>  
+        🛫 Validating flight: Delhi_Mumbai - Vistara - Business - Mañana - ₹30558.62
+        <br>
+        <ul>
+          <li>Historical minimal price: ₹7,153.00</li>
+          <li>Historical maximum price: ₹90,281.00</li>
+          <li>Historical mean price: ₹48,902.89</li>
+        </ul>
+        <br>
+        🛫 Validating flight: Mumbai_Kolkata - Air India - Economy - Tarde - ₹4464.27
+        <br>
+        <ul>
+          <li>Historical minimal price: ₹4,457.00</li>
+          <li>Historical maximum price: ₹21,273.00</li>
+          <li>Historical mean price: ₹7,573.19</li>
+        </ul>
+        <br>
+        🛫 Validating flight: Kolkata_Delhi - SpiceJet - Economy - Noche - ₹5988.87
+        <br>
+        <ul>
+          <li>Historical minimal price: ₹3,999.00</li>
+          <li>Historical maximum price: ₹22,327.00</li>
+          <li>Historical mean price: ₹6,086.34</li>
+        </ul>
+        <br><br>
+        ➡️It is concluded that all predicted prices are reasonable as they are within the historical range and are lower 
+        than the average price, which is expected for a flight with these characteristics. ✅<br><br>
+        <h2>🎉</h2>
+      </div>
     </section><!-- /Portfolio Details Section -->
 
   </main>
